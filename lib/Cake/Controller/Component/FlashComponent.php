@@ -112,6 +112,10 @@ class FlashComponent extends Component {
 		}
 
 		if (!empty($args[1])) {
+                        if (!empty($args[1]['plugin'])) {
+                                $options = ['element' => $args[1]['plugin'] . '.' . $options['element']];
+                                unset($args[1]['plugin']);
+                        }
 			$options += (array)$args[1];
 		}
 
